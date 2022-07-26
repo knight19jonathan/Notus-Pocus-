@@ -3,7 +3,7 @@ const fs = require('fs');
 
 notes.get('/', (req, res) => {
     console.info(`${req.method} request recieved for Notes`);
-    fs.readFile("./db.json", "utf8", (err, data) => {
+    fs.readFile("./db/notes.json", "utf8", (err, data) => {
         if (err) {
             console.info(err);
             throw err;

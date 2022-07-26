@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/knight19jonathan/Notus-Pocus-/issues"
   },
-  "homepage": "https://github.com/knight19jonathan/Notus-Pocus-#readme"
+  "homepage": "https://github.com/knight19jonathan/Notus-Pocus-#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
 }
