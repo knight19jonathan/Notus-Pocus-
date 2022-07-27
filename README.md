@@ -3,7 +3,7 @@
 ## Description
 #### Note Taking App hosted on the web.
 
-![This is the screenshot of the application](https://ibb.co/CJZZHqR)
+![This is the screenshot of the application](https://i.ibb.co/wWjHNKL/note.jpg)
 
 ## Table of Contents
 - [Installation](#installation)
