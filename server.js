@@ -1,7 +1,5 @@
 const express = require('express');
 const path = require('path');
-//const { clog } = require('./middleware/clog');
-//const api = require('./controllers/index.js');
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 
@@ -10,18 +8,17 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-// Middleware for parsing JSON and urlencoded form data
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static('public'))
 
-// GET Route for homepage
+
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
-// GET Route for feedback page
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
@@ -32,18 +29,18 @@ app.get('/api/notes', (req, res) => {
 });
 
 
-app.get('/api/:note_id', (req, res) => {
-  console.info(`${req.method} request recieved for Notes`);
-  const noteId = req.params.note_id;
-  res.sendFile(path.join(__dirname, './db/db.json'))
-    .then((data) => JSON.parse(data))
-    .then((json) => {
-      const result = json.filter((note) => note.note_id === noteId);
-      return result.length > 0
-        ? res.json(result)
-        : res.json('No note with that ID');
-    });
-});
+// app.get('/api/notes/:note_id', (req, res) => {
+//   console.info(`${req.method} request recieved for Notes`);
+//   const noteId = req.params.note_id;
+//   res.sendFile(path.join(__dirname, './db/db.json'))
+//     .then((data) => JSON.parse(data))
+//     .then((json) => {
+//       const result = json.filter(() => note.note_id === noteId);
+//       return result.length > 0
+//         ? res.json(result)
+//         : res.json('No note with that ID');
+//     });
+// });
 
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request recieved for Notes`);
@@ -84,7 +81,7 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
+  console.log(`App listening at http://localhost:${PORT}`)
 );
 
 
